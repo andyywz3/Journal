@@ -5,13 +5,15 @@ window.Journal = {
   Routers: {},
   initialize: function($rootEl, postData) {
     var that = this;
+    new Journal.Routers.PostRouter($rootEl, postData)
+    Backbone.history.start();
+    // var posts = new Journal.Collections.Posts(postData);
+    //
+    // var postIndexView = new Journal.Views.PostIndexView({
+    //   collection: posts
+    // });
 
-    var posts = new Journal.Collections.Posts(postData);
-    console.log(posts)
-    var postIndexView = new Journal.Views.PostIndexView({
-      collection: posts
-    });
-
-    $rootEl.html(postIndexView.render().$el);
+    // var postShowView = new Journal.Views.PostShowView({
+    // });
   }
 };
