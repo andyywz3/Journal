@@ -1,0 +1,16 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<script type="application/json" id="posts">
+  <%= Post.all.to_json.html_safe %>
+</script>
+
+<script type="application/javascript">
+
+$(function(){
+  var bootstrappedPosts = JSON.parse($('#posts').html());
+
+  window.Journal.initialize($('body'), bootstrappedPosts);
+});
+
+</script>
