@@ -1,3 +1,5 @@
+<a class="newpost" href="#/posts/new">New Post</a>
+
 <ul>
 <% posts.each(function(post){ %>
   <li >Title: <a href="#/posts/<%= post.escape("id") %>"><%= post.escape("title") %></a>
@@ -6,5 +8,3 @@
   </li>
 <% }); %>
 </ul>
-
-<a href="#/posts/new">New Post</a>
