@@ -21,4 +21,17 @@ class PostsController < ApplicationController
       format.json {render json: @post.id}
     end
   end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      respond_to do |format|
+        format.json {render json: @post}
+      end
+    else
+      respond_to do |format|
+        format.json {render json: {errors: @post.errors}, status: 418}
+      end
+    end
+  end
 end

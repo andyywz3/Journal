@@ -1,6 +1,6 @@
 Journal::Application.routes.draw do
 
-  resources :posts, only: [:index, :create, :destroy]
+  resources :posts, only: [:index, :create, :destroy, :update]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

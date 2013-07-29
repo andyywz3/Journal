@@ -11,7 +11,6 @@ Journal.Views.PostShowView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log("im in here!")
     var that = this;
     console.log(that.model)
     var renderedContent = JST["posts/show"]({
