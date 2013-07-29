@@ -7,6 +7,7 @@ Journal.Routers.PostRouter = Backbone.Router.extend({
 
   routes: {
     "": "index",
+    "posts/new": "new",
     "posts/:id": "show",
     "posts/:id/edit": "edit"
   },
@@ -36,6 +37,15 @@ Journal.Routers.PostRouter = Backbone.Router.extend({
     });
 
     this.$rootEl.html(postEditView.render().$el);
+  },
+
+  new: function(){
+    var that = this;
+    var postNewView = new Journal.Views.PostNewView({
+      collection: that.posts
+    });
+
+    that.$rootEl.html(postNewView.render().$el);
   }
 
 });

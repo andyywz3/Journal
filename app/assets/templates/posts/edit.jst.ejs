@@ -1,7 +1,8 @@
-<h1> Edit Post </h1>
+<h1> <%= post ? "Edit " : "New " %> Post </h1>
 <form>
-<input type="text" name="post[title]" value="<%= post.escape("title") %>">
-<textarea name="post[body]"><%= post.escape("body") %></textarea>
-<input type="hidden" name="post[id]" value="<%= post.escape("id") %>">
-<button class="edit">Edit Post</button>
+<input type="text" name="post[title]" value="<%= post ? post.escape("title") : null %>">
+<textarea name="post[body]"><%= post ? post.escape("body") : null %></textarea>
+<button class="edit new"><%= post ? "Edit " : "New " %>Post</button>
 </form>
+
+<button class="back">Back</button>

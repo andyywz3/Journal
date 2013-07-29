@@ -10,6 +10,16 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(params[:post])
+    if @post.save
+      respond_to do |format|
+        format.json {render json: @post}
+      end
+    else
+      respond_to do |format|
+        format.json {render json: {errors: @post.errors}, status: 418}
+      end
+    end
   end
 
   def destroy

@@ -27,6 +27,6 @@ Journal.Views.PostIndexView = Backbone.View.extend({
   remove: function(el){
     var thing = this.collection.get(el.target.id);
     thing.destroy();
-  },
+  }
 
 })
