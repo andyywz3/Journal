@@ -1,8 +1,7 @@
 Journal.Routers.PostRouter = Backbone.Router.extend({
-
-  initialize: function($rootEl, postData){
+  initialize: function($rootEl, posts){
     this.$rootEl = $rootEl;
-    this.posts = new Journal.Collections.Posts(postData);
+    this.posts = posts;
   },
 
   routes: {
@@ -14,11 +13,8 @@ Journal.Routers.PostRouter = Backbone.Router.extend({
 
   index: function() {
     var that = this;
-    var postIndexView = new Journal.Views.PostIndexView({
-      collection: that.posts
-    });
 
-    that.$rootEl.html(postIndexView.render().$el);
+    that.$rootEl.empty();
   },
 
   show: function(id){

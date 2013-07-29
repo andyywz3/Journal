@@ -1,5 +1,7 @@
 <h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+<div id="sidebar" style="float: left; padding-right: 100px;"></div>
+<div id="content" style="float: left;"></div>
 
 <script type="application/json" id="posts">
   <%= Post.all.to_json.html_safe %>
@@ -10,7 +12,7 @@
 $(function(){
   var bootstrappedPosts = JSON.parse($('#posts').html());
 
-  window.Journal.initialize($('body'), bootstrappedPosts);
+  window.Journal.initialize($('#sidebar'),$("#content"), bootstrappedPosts);
 });
 
 </script>

@@ -6,8 +6,6 @@ Journal.Views.PostNewView = Backbone.View.extend({
 
   initialize: function(){
     var that = this;
-
-    var renderCallback = that.render.bind(that);
   },
 
   render: function(){

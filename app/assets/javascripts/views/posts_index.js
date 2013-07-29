@@ -9,7 +9,7 @@ Journal.Views.PostIndexView = Backbone.View.extend({
     var renderCallback = that.render.bind(that);
     that.listenTo(that.collection, "remove", renderCallback);
     that.listenTo(that.collection, "add", renderCallback);
-    that.listenTo(that.collection, "change:title", renderCallback);
+    that.listenTo(that.collection, "change", renderCallback);
     that.listenTo(that.collection, "reset", renderCallback);
   },
 
